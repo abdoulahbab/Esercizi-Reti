@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="2f77cca5-9080-48e2-a893-76da132c3188">
+  <descriptionCdata><![CDATA[2f77cca5-9080-48e2-a893-76da132c3188.description=<pre>Generates a random number.\n\nInputs\:\nmax - The maximum number that can be returned.\nmin - The minimum number that can be returned.\n\nResponses\:\nsuccess - The operation completed Successfully.\nfailure - Something went wrong.\n\nReturns\:\nA random number between max and min (inclusive)</pre>
+]]></descriptionCdata>
+  <annotation>2f77cca5-9080-48e2-a893-76da132c3188.description</annotation>
+  <name>Random Number Generator</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="c6e3f24d-f5c4-41b0-96a2-61a66dcfee85">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>max</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>10
+</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="af73d0ae-53f8-46dd-b8b0-05e4e20fc0a2">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>min</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>1</value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="825587c4-143e-4f67-9a64-c72ca6f9dc1f">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="56da78dd-df0b-4f02-af22-daa65df01ac9">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="85b80b2f-41e0-44da-8f48-e8d2ec75a345">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>success</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="5a60b9a0-5fee-4330-b887-a9fcf38fead1">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="907d49d5-b5b3-40fb-96dc-deb9e0d603fd">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="670e539b-44c7-4f3a-a0e9-29772cd11bed">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="ce42d756-ab2a-4904-a111-551275ba7e19">
+    <annotation></annotation>
+    <name>returnResult</name>
+    <fieldName>returnResult</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="edd101c6-5856-4c9e-842e-38db796a34bb">
+    <baseIcon>wrench.png</baseIcon>
+    <basePath>Utilities</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <opRef>
+    <refId>2c22355a-9c26-4a9e-893c-01a35e4bb0e3</refId>
+  </opRef>
+  <fieldValues/>
+  <groupAliasRef>
+    <refId>5233030c-af46-432b-a682-b326ca6bf2ae</refId>
+    <refName>RAS_Operator_Path</refName>
+  </groupAliasRef>
+  <overrideGroupAlias>${overrideJRAS}</overrideGroupAlias>
+</operation>
