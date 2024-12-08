@@ -28,7 +28,15 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
+  <availableResultExpressions>
+    <expression id="ad145df9-08ff-4fa8-aa2f-9d2e071d4a66">
+      <annotation></annotation>
+      <name>path</name>
+      <fieldName>path</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
   <resultExpression id="d6d52d43-7421-4cff-9e37-2cfc23a20624">
     <annotation></annotation>
     <name>FailureMessage</name>
@@ -629,13 +637,13 @@
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>result</contextKey>
-          <expression id="fc900282-632a-471c-8730-76d3ce1361a9">
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>path</contextKey>
+          <expression id="01a3c2bd-6a87-4769-a24f-44848763d643">
             <annotation></annotation>
-            <name>Result Field: FailureMessage</name>
-            <fieldName>FailureMessage</fieldName>
-            <sourceType>RAWRESULT</sourceType>
+            <name>Input: excelFileName</name>
+            <fieldName>excelFileName</fieldName>
+            <sourceType>INPUT</sourceType>
             <filters/>
           </expression>
         </flowVariableAssignment>
