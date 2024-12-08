@@ -153,9 +153,9 @@
     </opResponse>
   </possibleResponses>
   <availableResultExpressions/>
-  <resultExpression id="50ef021d-78cb-4376-a5b6-1e2c63e5f666">
+  <resultExpression id="9a82f9ce-452f-40ac-87b2-936dea0beebc">
     <annotation></annotation>
-    <name>result</name>
+    <name>resultString</name>
     <fieldName>resultString</fieldName>
     <sourceType>RAWRESULT</sourceType>
     <filters/>

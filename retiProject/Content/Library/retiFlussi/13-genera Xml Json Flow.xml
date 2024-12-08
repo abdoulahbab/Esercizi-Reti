@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="23b96729-8a38-4e15-a2e2-2a624b59687c">
+  <descriptionCdata><![CDATA[23b96729-8a38-4e15-a2e2-2a624b59687c.description=<pre>\nCreare un flusso che riutilizzi quello creato nell\u2019 Esercizio 12, legga il contenuto del file .xls e\ngeneri l\u2019 xml ed il Json corrispondenti.\n</pre>
+]]></descriptionCdata>
+  <annotation>23b96729-8a38-4e15-a2e2-2a624b59687c.description</annotation>
+  <name>13-genera Xml Json Flow</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses/>
+  <availableResultExpressions/>
+  <resultExpression id="88932e5c-fd41-46a2-a250-6901b6a84d0b">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="4da53b8d-c533-4525-a3e8-d8d56be00641">
+    <baseIcon>flow.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps/>
+</flow>

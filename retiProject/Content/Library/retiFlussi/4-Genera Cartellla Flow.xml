@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow id="ef9dfbb9-d9ab-4d22-b578-a8be7ea0b9c6">
-  <descriptionCdata><![CDATA[ef9dfbb9-d9ab-4d22-b578-a8be7ea0b9c6.68db882a-85f3-41d1-a85b-f7e1d7cf75eb.description=<pre>Generates a file with a unique name.\n\nInputs\:\n    prefix - A prefix for the file name.\n    suffix - A suffix for the filename, if nothing is specified, .tmp will be used. If the suffix contains "." character then all the letter after will be considered as extension of the new created file.\n    directory - A directory to hold the temp file.\n\nResults\:\n    returnResult - This is the primary output. The path to the temp file.\n\nResponses\:\n    success - The temp file was created.\n    failure - The temp file could not be created.\n</pre>
+  <descriptionCdata><![CDATA[ef9dfbb9-d9ab-4d22-b578-a8be7ea0b9c6.1d4a85c6-a48a-4541-a193-59ce71c0b4c0.description=<pre>genera un cartella sotto C\:\\HPOO_TEST\\ con nome inserito dal utente\n\nInput Parameters\:\npath - il path della cartella da creare \=C\:\\HPOO_TEST\\+nome\nnome - il nome della cartella da creare \n\nResponses\:\nsuccess - cartella Creata.\nfailure - Qualcusa e andata storta.\n</pre>
+ef9dfbb9-d9ab-4d22-b578-a8be7ea0b9c6.description=<pre>\nun flusso che generi N numeri casuali tra 1 e 10, fino a quando il numero generato non e superior a 7\nil valore di N\=9223372036854775807 il massimo numero per il loop\n\n\ninputs\:\n    nome \:il nome della cartella da creare\nResponses\:\n   succes\:se la creazione della creazione e fatta con successo\n   failure\:altrimenti,\n</pre>\n
 ]]></descriptionCdata>
-  <annotation></annotation>
-  <name>Genera Cartellla Flow</name>
+  <annotation>ef9dfbb9-d9ab-4d22-b578-a8be7ea0b9c6.description</annotation>
+  <name>4-Genera Cartellla Flow</name>
   <categories/>
-  <inputs/>
+  <inputs>
+    <userInputBinding id="e43958f1-cfe9-4d76-995c-6c3bf2515e7d">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>nome</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
   <possibleResponses>
     <opResponse id="628e31a8-1a46-4e50-b9c3-2fd5e4c9a437">
       <annotation></annotation>
@@ -24,11 +41,19 @@
       <matchRules/>
     </opResponse>
   </possibleResponses>
-  <availableResultExpressions/>
-  <resultExpression id="aa59d9cc-8e7e-49ef-bc90-e15d069d60ef">
+  <availableResultExpressions>
+    <expression id="c6f34f0c-e62c-4049-9094-5b7a73216ada">
+      <annotation></annotation>
+      <name>path</name>
+      <fieldName>returnResult</fieldName>
+      <sourceType>RAWRESULT</sourceType>
+      <filters/>
+    </expression>
+  </availableResultExpressions>
+  <resultExpression id="efb89b08-8d82-47b3-bf73-b9e119512fec">
     <annotation></annotation>
-    <name>FailureMessage</name>
-    <fieldName>FailureMessage</fieldName>
+    <name>returnResult</name>
+    <fieldName>returnResult</fieldName>
     <sourceType>RAWRESULT</sourceType>
     <filters/>
   </resultExpression>
@@ -43,15 +68,28 @@
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
-    <step id="68db882a-85f3-41d1-a85b-f7e1d7cf75eb">
-      <annotation>ef9dfbb9-d9ab-4d22-b578-a8be7ea0b9c6.68db882a-85f3-41d1-a85b-f7e1d7cf75eb.description</annotation>
-      <name>FS Create Temp File</name>
+    <step id="1d4a85c6-a48a-4541-a193-59ce71c0b4c0">
+      <annotation>ef9dfbb9-d9ab-4d22-b578-a8be7ea0b9c6.1d4a85c6-a48a-4541-a193-59ce71c0b4c0.description</annotation>
+      <name>FS Create Directory</name>
       <bounds>
-        <x>120.0</x>
-        <y>153.0</y>
+        <x>124.0</x>
+        <y>130.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="22a81c1b-654d-4b23-9301-8ab62b4bc7b5">
+        <baseIcon>folder.png</baseIcon>
+        <basePath>Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="86d2eea1-0f81-4e45-b2be-8c79ecdd21b5">
+            <baseIcon>add.png</baseIcon>
+            <basePath>Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -65,7 +103,7 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="90ded73c-05d5-4821-8729-ad4ba08c87d0">
+        <staticBinding id="86ee1bc8-29e2-4229-9697-ed72724dc77e">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -73,43 +111,16 @@
           <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
-          <required>false</required>
+          <required>true</required>
           <isPersisted>true</isPersisted>
-          <inputSymbol>directory</inputSymbol>
+          <inputSymbol>path</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="8f24c08b-7383-41be-83f2-c6da4923a92f">
-          <annotation></annotation>
-          <toContextKey></toContextKey>
-          <fromContextKey></fromContextKey>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>suffix</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-        </staticBinding>
-        <staticBinding id="917d4bc4-7d1a-4a1d-89ff-3d5e5692a555">
-          <annotation></annotation>
-          <toContextKey></toContextKey>
-          <fromContextKey></fromContextKey>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>false</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>prefix</inputSymbol>
-          <listDelimiter>,</listDelimiter>
+          <value>C:\HPOO_TEST\${nome}</value>
           <record>false</record>
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="56bcd880-c9eb-491f-a62c-fa925a9b577e">
+        <transition id="58ff1e68-c123-42d8-94cb-11a7701405da">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -121,16 +132,16 @@
             <refId>232be4fb-f674-4688-80a6-51e0cecc2f46</refId>
           </destination>
           <source>
-            <refId>68db882a-85f3-41d1-a85b-f7e1d7cf75eb</refId>
+            <refId>1d4a85c6-a48a-4541-a193-59ce71c0b4c0</refId>
           </source>
           <positions>
             <point>
-              <x>179.0</x>
-              <y>194.0</y>
+              <x>175.0</x>
+              <y>189.0</y>
             </point>
             <point>
-              <x>548.0</x>
-              <y>207.0</y>
+              <x>463.0</x>
+              <y>187.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -138,7 +149,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="90458b7e-897a-499a-a19f-e37d0eea6d42">
+        <transition id="87dd060e-a7c4-4e38-aa7a-cb07f7aa02eb">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -150,16 +161,16 @@
             <refId>2c061e4a-b4b0-4d15-81f0-4dcb6f27c6ee</refId>
           </destination>
           <source>
-            <refId>68db882a-85f3-41d1-a85b-f7e1d7cf75eb</refId>
+            <refId>1d4a85c6-a48a-4541-a193-59ce71c0b4c0</refId>
           </source>
           <positions>
             <point>
-              <x>179.0</x>
-              <y>194.0</y>
+              <x>175.0</x>
+              <y>189.0</y>
             </point>
             <point>
-              <x>164.0</x>
-              <y>390.0</y>
+              <x>175.0</x>
+              <y>400.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -170,17 +181,32 @@
       </transitions>
       <properties/>
       <opRef>
-        <refId>f1eba723-9254-425b-ad05-cdf626d20605</refId>
+        <refId>57ae790b-0f69-4bae-b825-f67a74960550</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="2b84d607-8606-40fa-aa2c-ad042e34f785">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>returnResult</contextKey>
+          <expression id="8b77ce8c-4ee4-469c-937f-96264ecb7e67">
+            <annotation></annotation>
+            <name>Input: path</name>
+            <fieldName>path</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <returnStep id="232be4fb-f674-4688-80a6-51e0cecc2f46">
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
-        <x>352.0</x>
-        <y>136.0</y>
+        <x>363.0</x>
+        <y>131.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -217,7 +243,22 @@
       </transitions>
       <properties/>
       <returnStepType>RESOLVED</returnStepType>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="ed73e026-f487-4fee-9106-61621a9e4e5e">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>path</contextKey>
+          <expression id="7f335167-a8ad-4ce2-a7f4-34366a6d4042">
+            <annotation></annotation>
+            <name>Input: dummy</name>
+            <fieldName>dummy</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
     </returnStep>
     <returnStep id="2c061e4a-b4b0-4d15-81f0-4dcb6f27c6ee">
       <annotation></annotation>
@@ -264,5 +305,5 @@
       <assignments/>
     </returnStep>
   </steps>
-  <startSteps>68db882a-85f3-41d1-a85b-f7e1d7cf75eb</startSteps>
+  <startSteps>1d4a85c6-a48a-4541-a193-59ce71c0b4c0</startSteps>
 </flow>

@@ -6,7 +6,7 @@ fdd10d0a-22a4-4c96-b1f9-1b35abdfd3ea.cf1e4372-a2a9-463c-94b2-4b32c3f0dc45.descri
 fdd10d0a-22a4-4c96-b1f9-1b35abdfd3ea.description=<pre>\nun flusso\u00A0 che generi un numero casuale tra 1 e 10. Se il numero \u00E8 superiore a\n5,\u00A0SUCCESS\u00A0altrimenti\u00A0FAILURE.\n</pre>
 ]]></descriptionCdata>
   <annotation>fdd10d0a-22a4-4c96-b1f9-1b35abdfd3ea.description</annotation>
-  <name>Numero Casuale Test</name>
+  <name>1-Numero Casuale Test</name>
   <categories/>
   <inputs/>
   <possibleResponses>

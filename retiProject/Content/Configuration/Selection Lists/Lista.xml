@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selectionList id="f3dc7cae-1195-4a5b-948a-ea849b93e2b6">
+  <descriptionCdata><![CDATA[f3dc7cae-1195-4a5b-948a-ea849b93e2b6.description=Una lista usata per lo scopo del'esercizio 7 che contiene 5 valori 
+]]></descriptionCdata>
+  <annotation>f3dc7cae-1195-4a5b-948a-ea849b93e2b6.description</annotation>
+  <name>Lista</name>
+  <storage>
+    <string>1</string>
+    <string>2</string>
+    <string>3</string>
+    <string>4</string>
+    <string>5</string>
+  </storage>
+</selectionList>

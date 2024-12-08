@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flow id="ca1bcba9-b54d-4b9a-b4ae-d7fcef743962">
-  <descriptionCdata><![CDATA[ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.b22eff21-2631-4e9d-af77-214e6d8b76ff.description=<pre>\nThis operation loops as many times as specified in the "count" input, counting from "1" to a greater number, incrementing it by "1" at each iteration.\n\nInputs\:\n    count - The number of loops to complete.\nValid values\: from 1 to 9223372036854775807\n    reset - Specifies whether the counter restarts counting from "1".\nValid values\: true, false\nDefault value\: false\n    to - The number to count to. It will take the value of the "count" input field. \n    from - The number to start counting at. For this operation, it is customized to "1".\n    incrementBy - The number to increment by while counting. For this operation, it is customized to "1".\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the value of the number that was just counted.\n\nResponses\:\n    has more \u2013 The counting process is not complete. One or more iterations are pending.\n    no more \u2013 The counting process is complete.\n    failure - The operation completed unsuccessfully.\n\nNote\:\n1. It is recommended that you do not change the values of the "to", "from" or "incrementBy" input fields.\n2. The "from", "to" and "incrementBy" inputs are customized for this operation. Even though you can also customize them, if you need to specify the loop range borders and the increment value, use the "Counter" operation.\n\nExamples\:\n1. For a loop with 20 iterations, the following values should be provided for the input fields\:\n    count\: 20\n    reset\: false (this field can also be left blank, as "false" is the default value)\n2. For an infinite loop, the value of "count" should be at least "1" and the value of "reset" should be "true".\n</pre>
-ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.d063e9c7-600b-4785-8c63-5fa0bc4e834a.description=<pre>\nun flusso\u00A0 che generi un numero casuale tra 1 e 10. Se il numero \u00E8 superiore a\n5,\u00A0SUCCESS\u00A0altrimenti\u00A0FAILURE.\n</pre>
-ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 numeri casuali tra 1 e 10.\nSe il numero e superiore a 5,SUCCES altrimenti FAILURE</pre>
+<flow id="830db9d7-02fb-4f94-b228-b365ceba68bb">
+  <descriptionCdata><![CDATA[830db9d7-02fb-4f94-b228-b365ceba68bb.05106a25-f728-45fc-b493-3f1da0cbbad7.description=<pre>\nThis operation loops as many times as specified in the "count" input, counting from "1" to a greater number, incrementing it by "1" at each iteration.\n\nInputs\:\n    count - The number of loops to complete.\nValid values\: from 1 to 9223372036854775807\n    reset - Specifies whether the counter restarts counting from "1".\nValid values\: true, false\nDefault value\: false\n    to - The number to count to. It will take the value of the "count" input field. \n    from - The number to start counting at. For this operation, it is customized to "1".\n    incrementBy - The number to increment by while counting. For this operation, it is customized to "1".\n\nResults\:\n    resultString \u2013 This is the primary output. It contains the value of the number that was just counted.\n\nResponses\:\n    has more \u2013 The counting process is not complete. One or more iterations are pending.\n    no more \u2013 The counting process is complete.\n    failure - The operation completed unsuccessfully.\n\nNote\:\n1. It is recommended that you do not change the values of the "to", "from" or "incrementBy" input fields.\n2. The "from", "to" and "incrementBy" inputs are customized for this operation. Even though you can also customize them, if you need to specify the loop range borders and the increment value, use the "Counter" operation.\n\nExamples\:\n1. For a loop with 20 iterations, the following values should be provided for the input fields\:\n    count\: 20\n    reset\: false (this field can also be left blank, as "false" is the default value)\n2. For an infinite loop, the value of "count" should be at least "1" and the value of "reset" should be "true".\n</pre>
+830db9d7-02fb-4f94-b228-b365ceba68bb.3a5fafab-3e17-484a-91de-30d6fb6cca6d.description=<pre>\nun flusso\u00A0 che generi un numero casuale tra 1 e 10. Se il numero \u00E8 superiore a\n5,\u00A0SUCCESS\u00A0altrimenti\u00A0FAILURE.\n</pre>
+830db9d7-02fb-4f94-b228-b365ceba68bb.description=<pre>\nun flusso che generi N numeri casuali tra 1 e 10, fino a quando il numero generato non e superior a 7\nil valore di N\=9223372036854775807 il massimo numero per il loop\n</pre>
 ]]></descriptionCdata>
-  <annotation>ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description</annotation>
-  <name>Numero Casuale Loop Flow</name>
+  <annotation>830db9d7-02fb-4f94-b228-b365ceba68bb.description</annotation>
+  <name>3-Numero Casuale Loop Flow Estesa</name>
   <categories/>
   <inputs/>
   <possibleResponses>
-    <opResponse id="29b4d329-55d6-4c60-aa24-eabf2bf754b8">
+    <opResponse id="f21cebb9-958a-48dc-b1df-4058809b1581">
       <annotation></annotation>
       <name>failure</name>
       <isDefault>false</isDefault>
@@ -17,7 +17,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <type>ERROR</type>
       <matchRules/>
     </opResponse>
-    <opResponse id="f3d19713-5927-41b9-af87-4981b4f04bc5">
+    <opResponse id="5939d820-11f3-45fd-be4b-63b4845007d6">
       <annotation></annotation>
       <name>success</name>
       <isDefault>true</isDefault>
@@ -27,14 +27,14 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
     </opResponse>
   </possibleResponses>
   <availableResultExpressions/>
-  <resultExpression id="94420288-708a-4cd6-85f6-7cb849109f1b">
+  <resultExpression id="ed2c65d8-e710-4f13-af8d-6cefc188f4a0">
     <annotation></annotation>
     <name>FailureMessage</name>
     <fieldName>FailureMessage</fieldName>
     <sourceType>RAWRESULT</sourceType>
     <filters/>
   </resultExpression>
-  <iconSpec id="ac5b212b-7df6-4aa4-a75b-91a2f266edce">
+  <iconSpec id="6aed84d6-b1ee-4ace-b702-15e2c8ccff34">
     <baseIcon>flow.png</baseIcon>
     <basePath>System</basePath>
     <readOnly>false</readOnly>
@@ -45,8 +45,8 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
-    <step id="b22eff21-2631-4e9d-af77-214e6d8b76ff">
-      <annotation>ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.b22eff21-2631-4e9d-af77-214e6d8b76ff.description</annotation>
+    <step id="05106a25-f728-45fc-b493-3f1da0cbbad7">
+      <annotation>830db9d7-02fb-4f94-b228-b365ceba68bb.05106a25-f728-45fc-b493-3f1da0cbbad7.description</annotation>
       <name>Loop</name>
       <bounds>
         <x>616.0</x>
@@ -67,7 +67,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="d2fa3d87-11fa-4c78-9fa1-8489b8170149">
+        <staticBinding id="e26921fb-13cc-4fa4-8acc-1368d306952b">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -77,11 +77,10 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <isPersisted>true</isPersisted>
           <inputSymbol>count</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>5
-</value>
+          <value>9223372036854775807</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="45ef1264-c417-4ee6-bbb7-8eba06a41c6c">
+        <staticBinding id="be521e68-e03d-4fec-a21c-170c17ea6ef9">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -94,7 +93,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <value>false</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="3d13a7c2-3e66-4da1-9898-1a56aa9f7adf">
+        <staticBinding id="e6ebfa0a-dfb9-422f-ac7e-2f9ceb420c6b">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -110,7 +109,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <value>${count}</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="db90f684-a566-48f9-a6ed-167b98f42ff6">
+        <staticBinding id="ec103054-8e4f-4e0b-bd1d-a17611b010fd">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -126,7 +125,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <value>1</value>
           <record>false</record>
         </staticBinding>
-        <staticBinding id="b523aba3-68cf-4911-b0ef-3bc328854062">
+        <staticBinding id="8bd18d6d-eb0c-45b6-aeb7-5783ab8c538e">
           <annotation></annotation>
           <toContextKey></toContextKey>
           <fromContextKey></fromContextKey>
@@ -144,7 +143,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
         </staticBinding>
       </bindings>
       <transitions>
-        <transition id="384cfcb5-7f27-4348-b543-c6f1d2636601">
+        <transition id="da2563fb-f601-496b-9dbe-ec3f0888ae3d">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -153,10 +152,10 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>958f4742-c326-44a1-9379-35f2bcbbbfa7</refId>
+            <refId>0ba12dff-cc5b-4420-a529-0bc8a524a2c8</refId>
           </destination>
           <source>
-            <refId>b22eff21-2631-4e9d-af77-214e6d8b76ff</refId>
+            <refId>05106a25-f728-45fc-b493-3f1da0cbbad7</refId>
           </source>
           <positions>
             <point>
@@ -173,7 +172,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="cd0029b2-f256-4305-b521-22a88263afbd">
+        <transition id="021c1cfd-dd48-49a8-a867-c2ebd9fc6f29">
           <annotation></annotation>
           <name>has more</name>
           <command>NEXT</command>
@@ -182,10 +181,10 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>d063e9c7-600b-4785-8c63-5fa0bc4e834a</refId>
+            <refId>3a5fafab-3e17-484a-91de-30d6fb6cca6d</refId>
           </destination>
           <source>
-            <refId>b22eff21-2631-4e9d-af77-214e6d8b76ff</refId>
+            <refId>05106a25-f728-45fc-b493-3f1da0cbbad7</refId>
           </source>
           <positions>
             <point>
@@ -210,7 +209,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="31f1cd4a-e5e3-40ed-b1d4-66efc0924995">
+        <transition id="ac0c634a-5191-4510-9803-56c9b155d04f">
           <annotation></annotation>
           <name>no more</name>
           <command>NEXT</command>
@@ -219,10 +218,10 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>3bf40e08-b5a0-4647-9582-93d991482a28</refId>
+            <refId>6c29d39a-cf15-49e3-a3ba-01cf6e3711aa</refId>
           </destination>
           <source>
-            <refId>b22eff21-2631-4e9d-af77-214e6d8b76ff</refId>
+            <refId>05106a25-f728-45fc-b493-3f1da0cbbad7</refId>
           </source>
           <positions>
             <point>
@@ -247,8 +246,8 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="d063e9c7-600b-4785-8c63-5fa0bc4e834a">
-      <annotation>ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.d063e9c7-600b-4785-8c63-5fa0bc4e834a.description</annotation>
+    <step id="3a5fafab-3e17-484a-91de-30d6fb6cca6d">
+      <annotation>830db9d7-02fb-4f94-b228-b365ceba68bb.3a5fafab-3e17-484a-91de-30d6fb6cca6d.description</annotation>
       <name>Numero Casuale Test</name>
       <bounds>
         <x>255.0</x>
@@ -256,7 +255,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="a35f262c-db05-4f27-a85a-129009e9eeec">
+      <iconSpec id="6574ef3f-118d-4b01-a136-1a6729091da3">
         <baseIcon>flow.png</baseIcon>
         <basePath>System</basePath>
         <readOnly>false</readOnly>
@@ -276,7 +275,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="f5320188-5e33-402a-838e-d6791fc9483e">
+        <transition id="94171521-28c0-454c-8a17-a3908f19a393">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -285,10 +284,10 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>b22eff21-2631-4e9d-af77-214e6d8b76ff</refId>
+            <refId>05106a25-f728-45fc-b493-3f1da0cbbad7</refId>
           </destination>
           <source>
-            <refId>d063e9c7-600b-4785-8c63-5fa0bc4e834a</refId>
+            <refId>3a5fafab-3e17-484a-91de-30d6fb6cca6d</refId>
           </source>
           <positions>
             <point>
@@ -305,7 +304,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="05de3a72-c97c-492e-bb7a-731651db6c00">
+        <transition id="2bcb0586-d62d-4f58-b9eb-81d94de0a27b">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -314,10 +313,10 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>958f4742-c326-44a1-9379-35f2bcbbbfa7</refId>
+            <refId>0ba12dff-cc5b-4420-a529-0bc8a524a2c8</refId>
           </destination>
           <source>
-            <refId>d063e9c7-600b-4785-8c63-5fa0bc4e834a</refId>
+            <refId>3a5fafab-3e17-484a-91de-30d6fb6cca6d</refId>
           </source>
           <positions>
             <point>
@@ -342,7 +341,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <returnStep id="958f4742-c326-44a1-9379-35f2bcbbbfa7">
+    <returnStep id="0ba12dff-cc5b-4420-a529-0bc8a524a2c8">
       <annotation></annotation>
       <name>Error : failure</name>
       <bounds>
@@ -365,7 +364,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="7bbca802-9b8a-45cb-8ccb-fd6e1c454ca1">
+        <transition id="708717e7-7182-47fc-bb69-cce7c7e913e2">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -374,10 +373,10 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>958f4742-c326-44a1-9379-35f2bcbbbfa7</refId>
+            <refId>0ba12dff-cc5b-4420-a529-0bc8a524a2c8</refId>
           </destination>
           <source>
-            <refId>958f4742-c326-44a1-9379-35f2bcbbbfa7</refId>
+            <refId>0ba12dff-cc5b-4420-a529-0bc8a524a2c8</refId>
           </source>
           <positions/>
         </transition>
@@ -386,7 +385,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <returnStepType>ERROR</returnStepType>
       <assignments/>
     </returnStep>
-    <returnStep id="3bf40e08-b5a0-4647-9582-93d991482a28">
+    <returnStep id="6c29d39a-cf15-49e3-a3ba-01cf6e3711aa">
       <annotation></annotation>
       <name>Resolved : success</name>
       <bounds>
@@ -409,7 +408,7 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <userPrompt></userPrompt>
       <bindings/>
       <transitions>
-        <transition id="2c550779-557b-4c2d-9f0c-99119285f40b">
+        <transition id="e8c51560-5cb6-4914-9202-35c6e63b0ef3">
           <annotation></annotation>
           <name>return</name>
           <command>NEXT</command>
@@ -418,10 +417,10 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>3bf40e08-b5a0-4647-9582-93d991482a28</refId>
+            <refId>6c29d39a-cf15-49e3-a3ba-01cf6e3711aa</refId>
           </destination>
           <source>
-            <refId>3bf40e08-b5a0-4647-9582-93d991482a28</refId>
+            <refId>6c29d39a-cf15-49e3-a3ba-01cf6e3711aa</refId>
           </source>
           <positions/>
         </transition>
@@ -431,5 +430,5 @@ ca1bcba9-b54d-4b9a-b4ae-d7fcef743962.description=<pre>\nun flusso che generi 5 n
       <assignments/>
     </returnStep>
   </steps>
-  <startSteps>b22eff21-2631-4e9d-af77-214e6d8b76ff</startSteps>
+  <startSteps>05106a25-f728-45fc-b493-3f1da0cbbad7</startSteps>
 </flow>
