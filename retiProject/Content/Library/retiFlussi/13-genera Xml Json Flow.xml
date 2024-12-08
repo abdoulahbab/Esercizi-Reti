@@ -3,7 +3,7 @@
   <descriptionCdata><![CDATA[23b96729-8a38-4e15-a2e2-2a624b59687c.26426f0b-7621-4e31-b320-d242e894bc3f.description=<pre>\nCreare un flusso che legga quali file.txt contiene la cartella creata all\u2019Esercizio 4\u00A0e scriva in un\nfile\u00A0.xls\u00A0con 2 colonne\: una con il nome del file ed una con il path.\nIl flusso deve restituire in output il path del file .xls creato.\n</pre>
 23b96729-8a38-4e15-a2e2-2a624b59687c.2cbd68aa-6bc4-497b-b0f5-68b963b22026.description=Converts a JSON array or a JSON object to a XML document.\n\nInputs\:\n    json - The JSON array or object (in the form of a String).\n    prettyPrint - The flag for formatting the resulted XML. If it is true the result will contain tabs and newline chars.\nDefault value\: true\nValid values\: true, false\n    showXmlDeclaration - The flag for showing the xml declaration (<?xml version\="1.0" encoding\="UTF-8" standalone\="yes"?>). If this is true then rootTagName can't be empty. \nDefault value\: false\nValid values\: true, false\n    rootTagName - The XML tag name. If this input is empty you will get a list of XML elements.\n    defaultJsonArrayItemName - Default XML tag name for items in a JSON array if there isn't a pair (array name, array item name) defined in jsonArraysNames and jsonArraysItemNames.\nDefault value\: item\n    jsonArraysNames - The list of array names separated by delimiter.\nExamples\: f\:properties\n    jsonArraysItemNames - The coresponding list of array item names separated by delimiter.\nExamples\: f\:property\n    namespacesPrefixes - The list of tag prefixes separated by delimiter.\nExamples\: f,ui\n    namespacesUris - The coresponding list of namespaces uris separated by delimiter.\nExamples\: http\://java.sun.com/jsf/core,urn\:x-hp\:2012\:software\:eve\:uibinding\n    delimiter - The list separator.\nDefault value\: ,\n\nResults\:\n    returnResult - This is the primary output. The resulted XML document or XML elements.\n    returnCode - 0 for success; -1 for failure.\n\t\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n\nExamples\:\n1. json\={ "name"\:"John", "age"\:100, "retired"\:true, "otherInfo"\:null } and the other values with their default values you wil get\n<root>\n  <name>John</name>\n  <age>100</age>\n  <retired>true</retired>  \n</root>\nNull values are not converted to XML elements.\n\n2. json\=[{"key"\:"year", "value"\:2013}, {"key"\:"month", "value"\:"11"}] and the other values with their default values you wil get\n<item>\n  <key>year</key>\n  <value>2013</value>\n</item>\n<item>\n  <key>month</key>\n  <value>11</value>\n</item>\n3. A complex example that uses all the inputs\:\nprettyPrint\=true\nshowXmlDeclaration\=true\nrootTagName\=myroot\ndefaultJsonArrayItemName\=myitem, \njsonArraysNames\=f\:properties\njsonArraysItemNames\=f\:property \nnamespacesPrefixes\=f,ui\nnamespacesUris\=http\://java.sun.com/jsf/core,urn\:x-hp\:2012\:software\:eve\:uibinding\ndelimiter\=,\njson\=\n{\n  "@id"\:"Page1",\n  "ui\:position"\: {\n    "x"\:1,\n    "y"\:2\n  },\n  "f\:properties"\: [\n    {\n      "key1"\:"value1"\n    },\n    {\n      "key2"\:"value2"\n    }\n  ],\n  "details"\: [\n    {\n      "type"\:"size",\n      "height"\:10,\n      "width"\:10\n    },\n    {\n      "type"\:"color",\n      "name"\:"blue"\n    }\n  ]\n}\n\nThe the result will be\:\n<?xml version\="1.0" encoding\="UTF-8" standalone\="yes"?>\n<myroot xmlns\:f\="http\://java.sun.com/jsf/core" xmlns\:ui\="urn\:x-hp\:2012\:software\:eve\:uibinding" id\="Page1">\n  <ui\:position>\n    <x>1</x>\n    <y>2</y>\n  </ui\:position>\n  <f\:properties>\n    <f\:property>\n      <key1>value1</key1>\n    </f\:property>\n    <f\:property>\n      <key2>value2</key2>\n    </f\:property>\n  </f\:properties>\n  <details>\n    <myitem>\n      <type>size</type>\n      <height>10</height>\n      <width>10</width>\n    </myitem>\n    <myitem>\n      <type>color</type>\n      <name>blue</name>\n    </myitem>\n  </details>\n</myroot>\n
 23b96729-8a38-4e15-a2e2-2a624b59687c.9856c586-202b-46be-a1f6-b9cdd18cf724.description=<pre>This operation iterates through a list of values. It is not recommended to modify the value of the "list" and "separator" inputs during the iteration process.\n\nInputs\:\n    list - The list to iterate through.\n    separator - A delimiter separating the list elements.\nDefault value\: \u2018,\u2019 (comma) \n\nResults\:\n    resultString - The current list element (if the response is "has more").\n\nResponses\:\n    has more - Another value was found in the list and it has been returned.\n    no more - The iterator has gone through the entire list. This response is returned once per list iteration.  A subsequent call to the List iterator operation restarts the list iteration process.\n    failure - The operation completed unsuccessfully.\n\nNote\:\n   The position of the iterator in the list is tracked by each step's unique identifier. Therefore, you can simultaneously iterate through the same list from multiple steps.\n</pre>
-23b96729-8a38-4e15-a2e2-2a624b59687c.a6444552-e2b2-42f5-837f-8b30ce887281.description=<pre>\nInserts a new name/value property into a JSON object, where the value is a string. This operation forces the value of the name/vale pair to be a string, no matter what data type it actually is. This means that the <newPropertyValue> input does not need to be wrapped in quotes as any quotes entered in this input will be escaped, ending up in the properties' value. \nThe 'Add JSON Property to Object' operation should be used to add values of type other than string, for example\: another object, an array or a number. \n\nExamples\: \n1)\n    Inputs\:\n        jsonObject\: {}\n        newPropertyName\: test\n        newPropertyValue\: test_value\n     Result\:\n         { "test"\:"test_value"}\n2)\n    Inputs\:\n        jsonObject\: {}\n        newPropertyName\: test\n        newPropertyValue\: "test_value"\n     Result\:\n         { "test"\:"\\"test_value\\""}\n3)\n    Inputs\:\n        jsonObject\: {}\n        newPropertyName\: test\n        newPropertyValue\: 1\n     Result\:\n         { "test"\:"1"}\n4)\n    Inputs\:\n        jsonObject\: {}\n        newPropertyName\: test\n        newPropertyValue\: [1,2,3,4]\n     Result\:\n         { "test"\:"[1,2,3,4]"}\n     Note the value in the name/value pair above is not a JSON Array, but a plain string that looks like one. \n\nInputs\:\n    jsonObject - String representation of a JSON object. Objects in JSON are a collection of name value pairs, separated by a colon and surrounded with curly brackets {}. The name must be a string value, and the value can be a single string or any valid JSON object or array.\nExamples\: {"one"\:1, "two"\:2}, {"one"\:{"a"\:"a","B"\:"B"}, "two"\:"two", "three"\:[1,2,3.4]}\n    newPropertyName - The name of the new property to add to the JSON object. \nExamples\: property1, some_property, another property\n    newPropertyValue - The value for the new property. This is interpreted as a string, no matter what the contents of the input. \nExamples\: value1, another value\n\nResults\:\n    Result - The JSON array with the inserted element.\n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully. See the message in <returnResult> for details.\n</pre>
+23b96729-8a38-4e15-a2e2-2a624b59687c.9a60cf5d-e853-4f77-bf20-d264fdcfa6d7.description=<pre>\nInserts a new name/value property into a JSON object, where the value is a string. This operation forces the value of the name/vale pair to be a string, no matter what data type it actually is. This means that the <newPropertyValue> input does not need to be wrapped in quotes as any quotes entered in this input will be escaped, ending up in the properties' value. \nThe 'Add JSON Property to Object' operation should be used to add values of type other than string, for example\: another object, an array or a number. \n\nExamples\: \n1)\n    Inputs\:\n        jsonObject\: {}\n        newPropertyName\: test\n        newPropertyValue\: test_value\n     Result\:\n         { "test"\:"test_value"}\n2)\n    Inputs\:\n        jsonObject\: {}\n        newPropertyName\: test\n        newPropertyValue\: "test_value"\n     Result\:\n         { "test"\:"\\"test_value\\""}\n3)\n    Inputs\:\n        jsonObject\: {}\n        newPropertyName\: test\n        newPropertyValue\: 1\n     Result\:\n         { "test"\:"1"}\n4)\n    Inputs\:\n        jsonObject\: {}\n        newPropertyName\: test\n        newPropertyValue\: [1,2,3,4]\n     Result\:\n         { "test"\:"[1,2,3,4]"}\n     Note the value in the name/value pair above is not a JSON Array, but a plain string that looks like one. \n\nInputs\:\n    jsonObject - String representation of a JSON object. Objects in JSON are a collection of name value pairs, separated by a colon and surrounded with curly brackets {}. The name must be a string value, and the value can be a single string or any valid JSON object or array.\nExamples\: {"one"\:1, "two"\:2}, {"one"\:{"a"\:"a","B"\:"B"}, "two"\:"two", "three"\:[1,2,3.4]}\n    newPropertyName - The name of the new property to add to the JSON object. \nExamples\: property1, some_property, another property\n    newPropertyValue - The value for the new property. This is interpreted as a string, no matter what the contents of the input. \nExamples\: value1, another value\n\nResults\:\n    Result - The JSON array with the inserted element.\n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully. See the message in <returnResult> for details.\n</pre>
 23b96729-8a38-4e15-a2e2-2a624b59687c.c5c79197-7e0e-42c4-a5dd-ed4bcf08729c.description=<pre>\nRetrieves the cell data with specified row index and column index in an Excel document. \nXLS, XLSX and XLSM formats are supported. \n\nInputs\:\n    excelFileName - The absolute path to the new Excel document.\nExamples\: c\:\\temp\\test.xls\n    worksheetName - The name of Excel worksheet. \nDefault value\: Sheet1\n    hasHeader - If Yes, then the first row of the document is expected to be the header row. \nValid values\: yes, no\nDefault value\: Yes\n    firstRowIndex - The index of the first row in the Excel worksheet, including the header row.\nDefault value\: 0\n    rowIndex - A list of row indexes.\nExamples\: 1\:3, 10, 15\:20,25\nDefault Value\: from the index of the first row  to the index of the last row in the Excel worksheet.\n    columnIndex - A list of column indexes.\nExamples\: 1\:3, 10, 15\:20,25\nDefault value\: from 0 to the index of the last column in the Excel worksheet.\n    rowDelimiter - The delimiter used to separate the rows of the returnResult.\nDefault value\: | (pipe)\n    columnDelimiter - The delimiter used to separate the columns of the returnResult.\nDefault value\: , (comma)\n\nResults\:\n    returnResult - This is the primary output. Returns the cell data retrieved from Excel document.\n    header - A delimited list of column names of data being returned if hasHeader is set to Yes. \n    rowsCount - The number of the rows returned.\n    columnsCount - The number of the columns returned.\n\nResponses\:\n    success - The cell data was retrieved successfully.\n    failure - Failed to retireve the cell data.\n\nNotes\:\n1. All the index inputs are 0 based.\n2. Observed that in some Excel worksheet, the first couple of rows are used for title. So added firstRowIndex input.\n3. For the indexes in rowIndex input that is less than the first data row index or greater than the last row index in the worksheet, the operation trims those row indexes.\n4. For the indexes in columnIndex input that is less than 0 or greater than the last column index in a row, the operation trims those column indexes.\n5. The cell data with fraction format shows as double value in returnResult.\n</pre>
 23b96729-8a38-4e15-a2e2-2a624b59687c.description=<pre>\nCreare un flusso che riutilizzi quello creato nell\u2019 Esercizio 12, legga il contenuto del file .xls e\ngeneri l\u2019 xml ed il Json corrispondenti.\n</pre>
 ]]></descriptionCdata>
@@ -30,17 +30,17 @@
     </opResponse>
   </possibleResponses>
   <availableResultExpressions>
-    <expression id="9a6f12c8-87e3-4e1b-97b2-b9fee4711be1">
+    <expression id="c178dca1-6425-4b33-a929-5a16d2d37f44">
       <annotation></annotation>
       <name>jsonObject</name>
-      <fieldName>xmlFile</fieldName>
+      <fieldName>jsonObject</fieldName>
       <sourceType>RAWRESULT</sourceType>
       <filters/>
     </expression>
-    <expression id="5432d993-729f-4c4a-9fad-81ab9ca6293b">
+    <expression id="dc38b6e9-eb24-4b0d-aa08-e49aa1afab9c">
       <annotation></annotation>
       <name>xmlFile</name>
-      <fieldName>jsonObject</fieldName>
+      <fieldName>xmlFile</fieldName>
       <sourceType>RAWRESULT</sourceType>
       <filters/>
     </expression>
@@ -382,6 +382,20 @@
         <refId>3dad590b-8bf6-45b5-9a54-ea22b9056761</refId>
       </opRef>
       <assignments>
+        <flowVariableAssignment id="3d20af0d-84aa-42a1-8568-a60f8d268fd3">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>jsonObject</contextKey>
+          <expression id="dc3680aa-6e5d-407c-b87e-f19ed0027ac6">
+            <annotation></annotation>
+            <name>Input: json</name>
+            <fieldName>json</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
         <flowVariableAssignment id="a3c8f88a-914f-404d-9fd3-81b4f3e531dc">
           <annotation></annotation>
           <name>assignment</name>
@@ -672,7 +686,7 @@
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>FailureMessage</contextKey>
-          <expression id="821a06c5-30a8-4aeb-aa08-f219a0b3645a">
+          <expression id="98583c20-15cb-4dd3-885b-99ce7f19b0a5">
             <annotation></annotation>
             <name>Result Field: FailureMessage</name>
             <fieldName>FailureMessage</fieldName>
@@ -691,12 +705,6 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="abf1a0fe-705f-43f1-a24c-5d14312dcce9">
-        <baseIcon>return_failure.png</baseIcon>
-        <basePath>System</basePath>
-        <readOnly>true</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -736,8 +744,8 @@
       <annotation>23b96729-8a38-4e15-a2e2-2a624b59687c.9856c586-202b-46be-a1f6-b9cdd18cf724.description</annotation>
       <name>List Iterator</name>
       <bounds>
-        <x>390.0</x>
-        <y>531.0</y>
+        <x>307.0</x>
+        <y>534.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -770,19 +778,6 @@
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <staticBinding id="562bf8ae-8fc3-4fde-94e6-c6fb21fd92f0">
-          <annotation></annotation>
-          <assignFromContext>true</assignFromContext>
-          <assignToContext>true</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>false</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>jsonObject</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <value>{}</value>
-          <record>false</record>
-        </staticBinding>
         <staticBinding id="8d6f6456-ac11-431c-a26b-b577792c37ed">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
@@ -856,7 +851,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="acbacf4a-78e9-4479-95d2-f3ca6dcc2070">
+        <transition id="da3d36fb-8fbf-4298-8a70-7341c9da8899">
           <annotation></annotation>
           <name>has more</name>
           <command>NEXT</command>
@@ -865,19 +860,19 @@
           <shouldHandoff>false</shouldHandoff>
           <transitionValue>0.0</transitionValue>
           <destination>
-            <refId>a6444552-e2b2-42f5-837f-8b30ce887281</refId>
+            <refId>9a60cf5d-e853-4f77-bf20-d264fdcfa6d7</refId>
           </destination>
           <source>
             <refId>9856c586-202b-46be-a1f6-b9cdd18cf724</refId>
           </source>
           <positions>
             <point>
-              <x>471.0</x>
-              <y>563.0</y>
+              <x>440.0</x>
+              <y>565.0</y>
             </point>
             <point>
-              <x>581.0</x>
-              <y>656.0</y>
+              <x>518.0</x>
+              <y>708.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -891,20 +886,6 @@
         <refId>178e3d45-2c22-48d5-8ad3-33562a42bef6</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="d30cbf75-3ae7-426a-963d-423840dcc73a">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>APPEND</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>jsonObject</contextKey>
-          <expression id="feaf5a0a-f261-4d20-bced-f4332d9d5e0a">
-            <annotation></annotation>
-            <name>Input: jsonObject</name>
-            <fieldName>jsonObject</fieldName>
-            <sourceType>INPUT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
         <flowVariableAssignment id="0a1110eb-3a58-4ef4-976d-a91104f7b8eb">
           <annotation></annotation>
           <name>assignment</name>
@@ -944,30 +925,18 @@
                 <strip>,</strip>
                 <type>ALL_CHARACTERS_UP_TO_AND_INCLUDING</type>
               </stripTrailingFilter>
-              <concat id="05d54aaf-8a3a-4a97-baeb-24fc59e93b68">
-                <annotation></annotation>
-                <name>Format</name>
-                <text>&quot;</text>
-                <position>END</position>
-              </concat>
-              <concat id="cc2938ad-3d73-42b9-a632-f1b97feb59c0">
-                <annotation></annotation>
-                <name>Format</name>
-                <text>&quot;</text>
-                <position>BEGINNING</position>
-              </concat>
             </filters>
           </expression>
         </flowVariableAssignment>
       </assignments>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="a6444552-e2b2-42f5-837f-8b30ce887281">
-      <annotation>23b96729-8a38-4e15-a2e2-2a624b59687c.a6444552-e2b2-42f5-837f-8b30ce887281.description</annotation>
+    <step id="9a60cf5d-e853-4f77-bf20-d264fdcfa6d7">
+      <annotation>23b96729-8a38-4e15-a2e2-2a624b59687c.9a60cf5d-e853-4f77-bf20-d264fdcfa6d7.description</annotation>
       <name>Add Property to Object</name>
       <bounds>
-        <x>566.0</x>
-        <y>691.0</y>
+        <x>468.0</x>
+        <y>674.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
@@ -984,10 +953,10 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <staticBinding id="7757d157-cd40-459d-9b54-87e415ef23f1">
+        <staticBinding id="0d6c3b3b-7875-4d36-a270-930a60eea913">
           <annotation></annotation>
           <assignFromContext>true</assignFromContext>
-          <assignToContext>true</assignToContext>
+          <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
           <required>true</required>
@@ -997,7 +966,7 @@
           <value>{}</value>
           <record>false</record>
         </staticBinding>
-        <userInputBinding id="d5184d99-f33d-4102-b6cb-8163bd8d2039">
+        <staticBinding id="dd8f4e33-14fb-4ad0-94df-04e36efd01fa">
           <annotation></annotation>
           <fromContextKey>nome</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -1008,12 +977,10 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>newPropertyName</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-        <userInputBinding id="c6c725c2-c79d-42ed-9b81-95fc276ec8e0">
+        </staticBinding>
+        <staticBinding id="ee01b5d4-c1de-4833-9a7d-e4fa56b05ba9">
           <annotation></annotation>
           <fromContextKey>path</fromContextKey>
           <assignFromContext>true</assignFromContext>
@@ -1024,14 +991,12 @@
           <isPersisted>true</isPersisted>
           <inputSymbol>newPropertyValue</inputSymbol>
           <listDelimiter>,</listDelimiter>
+          <value></value>
           <record>false</record>
-          <prompt></prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
       </bindings>
       <transitions>
-        <transition id="cf38f17b-62a6-40fb-a438-96c9ccb44da9">
+        <transition id="89466531-ce74-45b2-b7d6-c4066d54db70">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -1043,24 +1008,24 @@
             <refId>9856c586-202b-46be-a1f6-b9cdd18cf724</refId>
           </destination>
           <source>
-            <refId>a6444552-e2b2-42f5-837f-8b30ce887281</refId>
+            <refId>9a60cf5d-e853-4f77-bf20-d264fdcfa6d7</refId>
           </source>
           <positions>
             <point>
-              <x>581.0</x>
-              <y>656.0</y>
+              <x>518.0</x>
+              <y>708.0</y>
             </point>
             <point>
-              <x>551.3218016041712</x>
-              <y>598.1709023070754</y>
+              <x>511.21626148202523</x>
+              <y>643.3549623581225</y>
             </point>
             <point>
-              <x>532.9597475281337</x>
-              <y>582.6466202246071</y>
+              <x>490.67851716369404</x>
+              <y>605.7024311078487</y>
             </point>
             <point>
-              <x>471.0</x>
-              <y>563.0</y>
+              <x>440.0</x>
+              <y>565.0</y>
             </point>
           </positions>
           <labelPosition>
@@ -1068,7 +1033,7 @@
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="2e7565ed-b3d6-43f8-8961-0e9154fa5de0">
+        <transition id="fcf311de-bdce-42a6-9d1c-cd9c17ee1317">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -1080,12 +1045,12 @@
             <refId>ac476d38-9cb0-4991-83d8-acaa986a6db9</refId>
           </destination>
           <source>
-            <refId>a6444552-e2b2-42f5-837f-8b30ce887281</refId>
+            <refId>9a60cf5d-e853-4f77-bf20-d264fdcfa6d7</refId>
           </source>
           <positions>
             <point>
-              <x>581.0</x>
-              <y>656.0</y>
+              <x>518.0</x>
+              <y>708.0</y>
             </point>
             <point>
               <x>924.0</x>
@@ -1103,16 +1068,16 @@
         <refId>735a6c1f-886b-4b09-9a05-6272a624483b</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="26fd04a8-670b-451a-a4cb-25029f58db4f">
+        <flowVariableAssignment id="4f398f41-1bf1-478c-9720-6381fd456eff">
           <annotation></annotation>
           <name>assignment</name>
-          <action>APPEND</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>jsonObject</contextKey>
-          <expression id="d75740e7-967b-41ca-b4f6-d0094522c9f6">
+          <expression id="80d0b906-e36d-41b7-951e-e6b29fb5767c">
             <annotation></annotation>
-            <name>Result Field: Result</name>
-            <fieldName>Result</fieldName>
+            <name>Result Field: returnResult</name>
+            <fieldName>returnResult</fieldName>
             <sourceType>RAWRESULT</sourceType>
             <filters/>
           </expression>
